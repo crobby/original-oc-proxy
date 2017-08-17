@@ -10,7 +10,7 @@
         "name": "bb",
         "image": "gcr.io/google_containers/busybox",
         "command": [
-          "sh", "-c", "sleep 5; wget -O - ${KUBERNETES_RO_SERVICE_HOST}:${KUBERNETES_RO_SERVICE_PORT}/api/v1/pods/; sleep 5"
+          "sh", "-c", "sleep 5; wget -O - ${KUBERNETES_RO_SERVICE_HOST}:${KUBERNETES_RO_SERVICE_PORT}/api/v1/pods/; sleep 10000"
         ],
         "ports": [
           {
