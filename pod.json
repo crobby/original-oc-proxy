@@ -51,7 +51,8 @@
               "proxy",
               "-p",
               "8001",
-              "--address=0.0.0.0"
+              "--address=0.0.0.0",
+              "--disable-filter=true"
             ],
             "ports": [
               {
