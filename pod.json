@@ -16,34 +16,6 @@
       "spec": {
         "containers": [
           {
-            "name": "bb",
-            "image": "gcr.io/google_containers/busybox",
-            "command": [
-              "sh", "-c", "sleep 5; wget -O - ${KUBERNETES_RO_SERVICE_HOST}:${KUBERNETES_RO_SERVICE_PORT}/api/v1/pods/; sleep 10000"
-            ],
-            "ports": [
-              {
-                "containerPort": 8080
-              }
-            ],
-            "env": [
-              {
-                "name": "KUBERNETES_RO_SERVICE_HOST",
-                "value": "127.0.0.1"
-              },
-              {
-                "name": "KUBERNETES_RO_SERVICE_PORT",
-                "value": "8001"
-              }
-            ],
-            "volumeMounts": [
-              {
-                "name": "test-volume",
-                "mountPath": "/mount/test-volume"
-              }
-            ]
-          },
-          {
             "name": "oc-proxy",
             "image": "docker.io/crobby/oc-proxy",
             "imagePullPolicy": "IfNotPresent",
