@@ -24,7 +24,8 @@
               "-p",
               "8001",
               "--address=0.0.0.0",
-              "--disable-filter=true"
+              "--disable-filter=true",
+              "--loglevel=9"
             ],
             "ports": [
               {
@@ -64,6 +65,24 @@
         "selector": {
           "app": "oc-proxy-tester"
         }
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Route",
+      "metadata": {
+        "name": "oc-proxy-service"
+      },
+      "spec": {
+        "port": {
+          "targetPort": "oc-proxy-port"
+        },
+        "to": {
+          "kind": "Service",
+          "name": "oc-proxy-service",
+          "weight": 100
+        },
+        "wildcardPolicy": "None"
       }
     }
   ]
