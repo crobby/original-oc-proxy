@@ -14,17 +14,7 @@
 
 # Use:
 #
-# `make oc` will download oc
 # `make image` will build an image
 
-oc:
-	wget https://github.com/openshift/origin/releases/download/v3.6.0/openshift-origin-client-tools-v3.6.0-c4dd4cf-linux-64bit.tar.gz
-	tar -xvzf openshift-origin-client-tools-v3.6.0-c4dd4cf-linux-64bit.tar.gz
-	cp openshift-origin-client-tools-v3.6.0-c4dd4cf-linux-64bit/oc .
-
-image: oc
+image:
 	docker build -t oc-proxy .
-
-clean:
-	rm -f oc
-	rm -rf openshift-origin-client-tools-v3.6.0-c4dd4cf-linux-64bit*
